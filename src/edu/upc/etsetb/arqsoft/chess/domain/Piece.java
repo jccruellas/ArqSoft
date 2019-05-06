@@ -36,4 +36,6 @@ public abstract class Piece {
     }
 
     public abstract void isPieceMovement(int f1, int c1, int f2, int c2) throws NoPieceMoveException;
+    
+    public abstract void isPathFree(int f1, int c1, int f2, int c2, Board b) throws NoPathFreeException ;
 }

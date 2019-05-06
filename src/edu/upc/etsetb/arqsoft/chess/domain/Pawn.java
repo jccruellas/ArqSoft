@@ -5,9 +5,12 @@
  */
 package edu.upc.etsetb.arqsoft.chess.domain;
 
-public class Pawn {
+public class Pawn extends Piece{
     public boolean firstmove = true;
-    public Pawn pawn;
+
+    public Pawn(PieceColor color) {
+        super(color);
+    }
     
     public void isPieceMovement(int f1, int c1, int f2, int c2) throws NoPieceMoveException{
         if( this.firstmove == true && f2-f1 == 2 && c1 == c2){this.firstmove = false; return;}
@@ -22,6 +25,11 @@ public class Pawn {
             }
         return;}  
         throw new NoPieceMoveException("Invalid pawn movement");            
+    }
+
+    @Override
+    public void isPathFree(int f1, int c1, int f2, int c2, Board b) throws NoPathFreeException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

@@ -47,7 +47,7 @@ public class TestPawn extends TestCase {
     @Test
     public void testPawn1_OK() throws Exception {
         System.out.println("testPawn1_OK()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         //first move check, constructor initializes at firstmove = true
         try {
             p.isPieceMovement(1, 4, 3, 4);
@@ -58,7 +58,7 @@ public class TestPawn extends TestCase {
     }
     public void testPawn2_OK() throws Exception {
         System.out.println("testPawn1_OK()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // Kill to the front right
         try {
             p.isPieceMovement(2, 3, 3, 4);
@@ -69,7 +69,7 @@ public class TestPawn extends TestCase {
     }
     public void testPawn3_OK() throws Exception {
         System.out.println("testPawn1_OK()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // Kill to the front left
         try {
             p.isPieceMovement(2, 3, 3, 2);
@@ -80,7 +80,7 @@ public class TestPawn extends TestCase {
     }
 
     public void testPawn4_OK() throws Exception {
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // Move one to the front
         try {
             p.isPieceMovement(2, 3, 3, 3);
@@ -92,7 +92,7 @@ public class TestPawn extends TestCase {
     
     public void testPawn1_KO() throws Exception {
         System.out.println("testPawn1_KO()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         p.isPieceMovement(1, 4, 3, 4);
         //we make a move before test, first move will be false, and we try to make to at once
         try {
@@ -105,7 +105,7 @@ public class TestPawn extends TestCase {
 
     public void testPawn2_KO() throws Exception {
         System.out.println("testPawn1_OK()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // We only move to the right, not straight
         try {
             p.isPieceMovement(3, 4, 3, 5);
@@ -117,7 +117,7 @@ public class TestPawn extends TestCase {
     
     public void testPawn3_KO() throws Exception {
         System.out.println("testPawn1_OK()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // We only move to the left, not straight
         try {
             p.isPieceMovement(2, 4, 2, 3);
@@ -128,7 +128,7 @@ public class TestPawn extends TestCase {
     }
     public void testPawn4_KO() throws Exception {
         System.out.println("testPawn1_OK()");
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // We move backwards
         try {
             p.isPieceMovement(2, 3, 1, 3);
@@ -139,7 +139,7 @@ public class TestPawn extends TestCase {
     }
         
     public void testPawn5_KO() throws Exception {
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // Kill back left
         try {
             p.isPieceMovement(2, 3, 1, 2);
@@ -150,7 +150,7 @@ public class TestPawn extends TestCase {
     }
 
     public void testPawn6_KO() throws Exception {
-        Pawn p = new Pawn();
+        Pawn p = new Pawn(PieceColor.BLACK);
         // We Kill back right
         try {
             p.isPieceMovement(2, 3, 1, 4);
